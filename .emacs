@@ -1,13 +1,12 @@
 ;;--------------------General--------------------
 ;; Refresh the Packages
 (require 'package)
-
 ;; If you want to use latest version
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-
 ;; If you want to use last tagged version
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
+
 ;; Keyboard Shortcuts
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
@@ -63,56 +62,132 @@
 
 ;; --------------------Tex Mode--------------------
 ;; Emacs加载Auctex
+;; (load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
+;; (setq TeX-auto-save t)
+;; (setq TeX-parse-self t)
+;; (setq-default TeX-master nil)	    
+;; (add-hook 'LaTeX-mode-hook
+;; 	  '(lambda ()
+;; 	     ;;LaTeX 模式下，不打开自动折行
+;; 	     (turn-off-auto-fill)
+;; 	     ;; 打开自动补全
+;; 	     (auto-complete-mode 1)
+;; 	     ;; 启动 math mode，你也可以不用。
+;; 	     (LaTeX-math-mode 1)
+;; 	     ;; 打开 outline mode
+;; 	     (outline-minor-mode 1)
+;; 	     ;; 接下来是和编译 TeX 有关的
+;; 	     ;; 编译的时候，不在当前窗口中显示编译信息
+;; 	     (setq TeX-show-compilation nil)
+;; 	     (setq TeX-clean-confirm nil)
+;; 	     (setq TeX-save-query nil)
+;; 	     ;; 按 \ 后光标跳到 mini-buffer 里面输入命令
+;; 	     ;; 看个人习惯，因为如果有了 auto-complete 和 yasnippet
+;; 	     ;; 这个不开启也问题不大。
+;; 	     (setq TeX-electric-escape t)
+;; 	     ;; 重新定义 pdf viewer，我设定为了 evince。
+;; 	     (setq TeX-view-program-list '(("Evince" "evince %o")))
+;; 	     (setq TeX-view-program-selection
+;; 	     	   '((output-pdf "Evince")))
+;; 	     ;; 设置编译引擎为 XeTeX
+;; 	     (setq TeX-global-PDF-mode t
+;; 	     	   TeX-engine 'xetex)
+;; 	     ;; 使用 XeLaTeX 作为默认程序来编译 LaTeX
+;; 	     (add-to-list 'TeX-command-list
+;; 	     		    '("XeLaTeX" "%'xelatex%(mode)%' %t"
+;; 	     				     TeX-run-TeX nil t))
+;; 	     (setq TeX-command-default "XeLaTeX")
+;; 	     )
+;; 	  )
+
+
+;;;;;;;;;;;;;;AUCTex initiating;;;;
 (load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
-(setq-default TeX-master nil)	    
+(setq-default TeX-master nil)
+
+;;;;;;;;;;;;RefTex;;;;;;;;;;;;;;;;
+(require 'reftex)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex) 
+(setq reftex-plug-into-AUCTeX t)
+(setq reftex-enable-partial-scans t)
+(setq reftex-save-parse-info t)
+(setq reftex-use-multiple-selection-buffers t)
+(setq reftex-toc-split-windows-horizontally t) ;;*toc*buffer在左侧。
+(setq reftex-toc-split-windows-fraction 0.2)  ;;*toc*buffer 使用整个frame的比例。
+(autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
+(autoload 'turn-on-reftex "reftex" "RefTeX Minor Mode" nil)
+(autoload 'reftex-citation "reftex-cite" "Make citation" nil)  
+(autoload 'reftex-index-phrase-mode "reftex-index" "Phrase mode" t)
+;;;;;;;;;;;;;;;CDLatex;;;;;;;;;;;;
+(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
+(autoload 'cdlatex-mode "cdlatex" "CDLaTeX Mode" t)
+(autoload 'turn-on-cdlatex "cdlatex" "CDLaTeX Mode" nil)
+
+;;;;;;;;;math-mode;;;;;;;;;;;;;;;
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+;;;;;;;;;LaTex-mode settings;;;;;
 (add-hook 'LaTeX-mode-hook
-	  '(lambda ()
-	     ;;LaTeX 模式下，不打开自动折行
-	     (turn-off-auto-fill)
-	     ;; 打开自动补全
-	     (auto-complete-mode 1)
-	     ;; 启动 math mode，你也可以不用。
-	     (LaTeX-math-mode 1)
-	     ;; 打开 outline mode
-	     (outline-minor-mode 1)
-	     ;; 接下来是和编译 TeX 有关的
-	     ;; 编译的时候，不在当前窗口中显示编译信息
-	     (setq TeX-show-compilation nil)
-	     (setq TeX-clean-confirm nil)
-	     (setq TeX-save-query nil)
-	     ;; 按 \ 后光标跳到 mini-buffer 里面输入命令
-	     ;; 看个人习惯，因为如果有了 auto-complete 和 yasnippet
-	     ;; 这个不开启也问题不大。
-	     (setq TeX-electric-escape t)
-	     ;; 重新定义 pdf viewer，我设定为了 evince。
-	     (setq TeX-view-program-list '(("Evince" "evince %o")))
-	     (setq TeX-view-program-selection
-	     	   '((output-pdf "Evince")))
-	     ;; 设置编译引擎为 XeTeX
-	     (setq TeX-global-PDF-mode t
-	     	   TeX-engine 'xetex)
-	     ;; 使用 XeLaTeX 作为默认程序来编译 LaTeX
-	     (add-to-list 'TeX-command-list
-	     		    '("XeLaTeX" "%'xelatex%(mode)%' %t"
-	     				     TeX-run-TeX nil t))
-	     (setq TeX-command-default "XeLaTeX")
-	     ;; 设置编译信息
-	     (defun compile-xelatex ()
-	       (interactive)
-	       (compile (format "xelatex -shell-escape %s" (buffer-name))))
-	     (global-set-key (kbd "<f9>") 'compile-xelatex)
-	     (defun compile-latex ()
-	       (interactive)
-	       (compile (format "latex -shell-escape %s" (buffer-name))))
-	     (global-set-key (kbd "C-<f9>") 'compile-latex)
-	     ;; 设置tab为4个空格的宽度	 
-	     ;; (setq c-basic-offset 4)
-	     ;; (setq default-tab-width 4)
-	     )
-	  )
+	  (lambda ()
+	    (TeX-fold-mode 1)
+	    (turn-off-auto-fill)              ;;LaTeX模式下，不打开自动折行
+	    (linum-mode 1)
+	    (auto-complete-mode 1)
+	    (LaTeX-math-mode 1)
+	    (outline-minor-mode 1)            ;;使用 LaTeX mode 的时候打开 outline mode
+	    (setq TeX-show-compilation nil)   ;;NOT display compilation windows
+	    (setq TeX-global-PDF-mode t       ;;PDF mode enable, not plain
+		  TeX-engine 'xetex)  ;;use xelatex default
+	    (setq TeX-clean-confirm nil)
+	    (setq TeX-save-query nil)
+	    (imenu-add-menubar-index)
+	    (setq font-latex-fontify-script t)
+	    (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
+	    ;; 用C-TAB代替排版
+	    (global-set-key (kbd "C-<tab>") 'indent-according-to-mode)
+	    (setq TeX-electric-escape t)      ;; 按 \ 后光标跳到mini-buffer里面输入命令
+	    (setq TeX-view-program-list '(("Evince" "evince %o"))) ;;重新定义pdf viewer
+	    (setq TeX-view-program-selection '((output-pdf "Evince")))
+	    (add-to-list 'TeX-command-list '("XeLaTeX" "%'xelatex%(mode)%' %t" TeX-run-TeX nil t))
+	    (setq TeX-command-default "XeLaTeX")
+	    (setq TeX-fold-env-spec-list (quote (("[comment]" ("comment")) ("[figure]" ("figure")) ("[table]" ("table"))("[itemize]"("itemize"))("[enumerate]"("enumerate"))("[description]"("description"))("[overpic]"("overpic"))("[tabularx]"("tabularx"))("[code]"("code"))("[shell]"("shell")))))
+
+	    ;;定义latex-mode下的快捷键
+	    (define-key LaTeX-mode-map (kbd "C-c C-p") 'reftex-parse-all)
+	    
+            ;;;;;;设置更深层的目录;;;;;;;;;;;;;
+	    (setq reftex-section-levels
+		  '(("part" . 0) ("chapter" . 1) ("section" . 2) ("subsection" . 3)
+		    ("frametitle" . 4) ("subsubsection" . 4) ("paragraph" . 5)
+		    ("subparagraph" . 6) ("addchap" . -1) ("addsec" . -2)))
+
+
+	    (setq LaTeX-section-hook
+		  '(LaTeX-section-heading
+		    LaTeX-section-title
+		    ;;LaTeX-section-toc
+		    LaTeX-section-section
+		    LaTeX-section-label))
+	    ;; 设置编译信息
+	    (defun compile-xelatex ()
+	      (interactive)
+	      (compile (format "xelatex -shell-escape %s" (buffer-name))))
+	    (global-set-key (kbd "<f9>") 'compile-xelatex)
+	    (defun compile-latex ()
+	      (interactive)
+	      (compile (format "latex -shell-escape %s" (buffer-name))))
+	    (global-set-key (kbd "C-<f9>") 'compile-latex)
+	    ;; 设置tab为4个空格的宽度	 
+	    ;; (setq c-basic-offset 4)
+	    ;; (setq default-tab-width 4)
+	    
+	    ));;
+
+
+(provide 'my-auctex)
+
 
 ;; --------------------C++ Mode--------------------
 (add-hook 'c++-mode-hook
