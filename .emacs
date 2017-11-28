@@ -146,7 +146,7 @@
 	    (setq font-latex-fontify-script t)
 	    (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)
 	    ;; 用C-TAB代替排版
-	    (global-set-key (kbd "C-<tab>") 'indent-according-to-mode)
+	    (global-set-key (kbd "C-<tab>") 'indent-for-tab-command)
 	    (setq TeX-electric-escape t)      ;; 按 \ 后光标跳到mini-buffer里面输入命令
 	    (setq TeX-view-program-list '(("Evince" "evince %o"))) ;;重新定义pdf viewer
 	    (setq TeX-view-program-selection '((output-pdf "Evince")))
@@ -179,6 +179,9 @@
 	      (interactive)
 	      (compile (format "latex -shell-escape %s" (buffer-name))))
 	    (global-set-key (kbd "C-<f9>") 'compile-latex)
+	    (global-set-key (kbd "C-c =") 'show-subtree)
+	    (global-set-key (kbd "C-c -") 'hide-subtree)
+	    
 	    ;; 设置tab为4个空格的宽度	 
 	    ;; (setq c-basic-offset 4)
 	    ;; (setq default-tab-width 4)
