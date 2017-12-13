@@ -243,6 +243,8 @@
 	      (interactive)
 	      (compile (format "iverilog -o %s %s"  (file-name-sans-extension (buffer-name))(buffer-name))))
 	    (global-set-key (kbd "<f9>") 'compile-verilog)
+	    ;; 代码补全
+	    (auto-complete-mode 1)
 	    )
 	  )
 
