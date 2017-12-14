@@ -228,9 +228,9 @@
 
 
 ;; --------------------Org Mode--------------------
+(setq org-startup-indented t)
 (add-hook 'org-mode-hook
 	  (lambda ()
-	    (setq org-startup-indented t)
 	    ;; 快速插入代码块
 	    (defun org-insert-src-block (src-code-type)
 	      "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
