@@ -240,7 +240,7 @@
 			"calc" "asymptote" "dot" "gnuplot" "ledger" "lilypond" "mscgen"
 			"octave" "oz" "plantuml" "R" "sass" "screen" "sql" "awk" "ditaa"
 			"haskell" "latex" "lisp" "matlab" "ocaml" "org" "perl" "ruby"
-			"scheme" "sqlite")))
+			"scheme" "sqlite" "verilog")))
 		 (list (ido-completing-read "Source code type: " src-code-types))))
 	      (progn
 		(newline-and-indent)
@@ -254,7 +254,7 @@
 	    ;; C-TAB for expanding
 	    ;; (local-set-key (kbd "C-<tab>") 'yas/expand-from-trigger-key)
 	    ;; keybinding for editing source code blocks
-	    ;; (local-set-key (kbd "C-c s e") 'org-edit-src-code)
+	    (local-set-key (kbd "C-c s e") 'org-edit-src-code)
 	    ;; keybinding for inserting code blocks
 	    (local-set-key (kbd "C-c s i") 'org-insert-src-block)    
 	    )
