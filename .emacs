@@ -6,7 +6,6 @@
 ;; If you want to use last tagged version
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
-
 ;; Keyboard Shortcuts
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
@@ -72,6 +71,15 @@
 ;; Or you can do like me and find an unused, but less convenient, binding:
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
+;; hide-show
+;;能把一个代码块缩起来，需要的时候再展开
+;; M-x hs-minor-mode
+;; C-c @ ESC C-s show all
+;; C-c @ ESC C-h hide all
+;; C-c @ C-s show block
+;; C-c @ C-h hide block
+;; C-c @ C-c toggle hide/show
+(load-library "hideshow")
 
 ;; --------------------Tex Mode--------------------
 ;;;;;;;;;;;;;;AUCTex initiating;;;;
@@ -164,6 +172,7 @@
 
 
 ;; --------------------C++ Mode--------------------
+(add-hook 'c++-mode-hook 'hs-minor-mode)
 (add-hook 'c++-mode-hook
 	  '(lambda ()
 	     ;; 设置编译信息
@@ -180,6 +189,14 @@
 	     ;; 设置tab为4个空格的宽度	 
 	     (setq c-basic-offset 4)
 	     (setq default-tab-width 4)
+
+	     (c-set-style "stroustrup")
+	     (c-toggle-auto-state)
+	     (c-toggle-hungry-state)
+	     (imenu-add-menubar-index)
+	     (which-function-mode)
+	     
+	     (auto-complete-mode 1)
 	     )
 	  )
 
