@@ -59,49 +59,21 @@
 ;; Auto Indent
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+;; --------------------Multiple-Cursors--------------------
+(require 'multiple-cursors)
+;; When you have an active region that spans multiple lines, the following will add a cursor to each line:
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; When you want to add multiple cursors not based on continuous lines, but based on keywords in the buffer, use:
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; To override a mouse event, you will likely have to also unbind the down-mouse part of the event. Like this:
+(global-unset-key (kbd "M-<down-mouse-1>"))
+;; Or you can do like me and find an unused, but less convenient, binding:
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
 
 ;; --------------------Tex Mode--------------------
-;; Emacs加载Auctex
-;; (load "auctex.el" nil t t)
-;; (load "preview-latex.el" nil t t)
-;; (setq TeX-auto-save t)
-;; (setq TeX-parse-self t)
-;; (setq-default TeX-master nil)	    
-;; (add-hook 'LaTeX-mode-hook
-;; 	  '(lambda ()
-;; 	     ;;LaTeX 模式下，不打开自动折行
-;; 	     (turn-off-auto-fill)
-;; 	     ;; 打开自动补全
-;; 	     (auto-complete-mode 1)
-;; 	     ;; 启动 math mode，你也可以不用。
-;; 	     (LaTeX-math-mode 1)
-;; 	     ;; 打开 outline mode
-;; 	     (outline-minor-mode 1)
-;; 	     ;; 接下来是和编译 TeX 有关的
-;; 	     ;; 编译的时候，不在当前窗口中显示编译信息
-;; 	     (setq TeX-show-compilation nil)
-;; 	     (setq TeX-clean-confirm nil)
-;; 	     (setq TeX-save-query nil)
-;; 	     ;; 按 \ 后光标跳到 mini-buffer 里面输入命令
-;; 	     ;; 看个人习惯，因为如果有了 auto-complete 和 yasnippet
-;; 	     ;; 这个不开启也问题不大。
-;; 	     (setq TeX-electric-escape t)
-;; 	     ;; 重新定义 pdf viewer，我设定为了 evince。
-;; 	     (setq TeX-view-program-list '(("Evince" "evince %o")))
-;; 	     (setq TeX-view-program-selection
-;; 	     	   '((output-pdf "Evince")))
-;; 	     ;; 设置编译引擎为 XeTeX
-;; 	     (setq TeX-global-PDF-mode t
-;; 	     	   TeX-engine 'xetex)
-;; 	     ;; 使用 XeLaTeX 作为默认程序来编译 LaTeX
-;; 	     (add-to-list 'TeX-command-list
-;; 	     		    '("XeLaTeX" "%'xelatex%(mode)%' %t"
-;; 	     				     TeX-run-TeX nil t))
-;; 	     (setq TeX-command-default "XeLaTeX")
-;; 	     )
-;; 	  )
-
-
 ;;;;;;;;;;;;;;AUCTex initiating;;;;
 (load "auctex.el" nil t t)
 (setq TeX-auto-save t)
@@ -132,8 +104,7 @@
 (add-hook 'LaTeX-mode-hook
 	  (lambda ()
 	    (TeX-fold-mode 1)
-	    (turn-off-auto-fill)              ;;LaTeX模式下，不打开自动折行
-	    (linum-mode 1)
+	    ;; (turn-off-auto-fill)              ;;LaTeX模式下，不打开自动折行
 	    (auto-complete-mode 1)
 	    (LaTeX-math-mode 1)
 	    (outline-minor-mode 1)            ;;使用 LaTeX mode 的时候打开 outline mode
@@ -278,7 +249,7 @@
 	    )
 	  )
 
-;; --------------------Custon Sets--------------------
+;; --------------------Custom Sets--------------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -288,6 +259,9 @@
  '(cua-mode t nil (cua-base))
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (multiple-cursors org htmlize yasnippet auto-complete)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -295,3 +269,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Courier 10 Pitch" :foundry "bitstream" :slant normal :weight bold :height 151 :width normal)))))
+;; 禁用cua快捷键
+(setq cua-enable-cua-keys nil)

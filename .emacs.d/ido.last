@@ -1,0 +1,27 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/sudo:root@localhost:/" . "etc/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/sudo:root@localhost:/etc/"
+ "/sudo:root@localhost:"
+ "/sudo:/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "shadowsocks.json"
+ "root@"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/limuyang1999/" (23091 48654 249934 164000) ".presage/" ".emacs.d/" ".config/" ".mozilla/" ".swt/" ".xinputrc" "Pictures/" ".sogouinput/" ".kchmviewer/" ".gnupg/" "Public/" ".git-credentials" "Ladder.sh" ".ssh/" ".emacs~" ".emacs" ".profile" ".pki/" ".backups/" ".bashrc" ".gitconfig" ".Xauthority" ".subversion/" ".cache/" ".dbus/" ".oracle_jre_usage/" "../" ".gphoto/" ".bash_history" ".nutstore/" ".wget-hsts" ".xsession-errors" ".Xilinx/" ".gconf/" ".nano/" ".dmrc" ".compiz/" "Synchronize/" ".bash_logout" "Music/" "Desktop/" "missfont.log" "Videos/" ".adobe/" "Templates/" ".macromedia/" "Downloads/" ".sudo_as_admin_successful" ".kde/" ".java/" "./" ".texmf-var/" ".ICEauthority" ".xsession-errors.old" ".local/" ".pam_environment" "Documents/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
