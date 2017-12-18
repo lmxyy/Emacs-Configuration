@@ -266,14 +266,6 @@
 	    )
 	  )
 
-;; --------------------Ams Mode--------------------
-;; Modify the comment symbol
-(add-hook 'asm-mode-hook
-	  (lambda ()
-	    (setq commend-start "#")
-	    )
-	  )
-
 ;; --------------------Custom Sets--------------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
