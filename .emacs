@@ -1,4 +1,4 @@
-;;--------------------General--------------------
+;; --------------------General--------------------
 ;; Refresh the Packages
 (require 'package)
 ;; If you want to use latest version

@@ -20,6 +20,8 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/limuyang1999/Desktop/Computer Architecture Task 2/Tools/" (23091 55633 773050 341000) "transform.cpp" "mips.in" "riscv.in" "../" "transform.cpp~" "./" "transform" "mips.in~")
+
  ("/home/limuyang1999/" (23091 48654 249934 164000) ".presage/" ".emacs.d/" ".config/" ".mozilla/" ".swt/" ".xinputrc" "Pictures/" ".sogouinput/" ".kchmviewer/" ".gnupg/" "Public/" ".git-credentials" "Ladder.sh" ".ssh/" ".emacs~" ".emacs" ".profile" ".pki/" ".backups/" ".bashrc" ".gitconfig" ".Xauthority" ".subversion/" ".cache/" ".dbus/" ".oracle_jre_usage/" "../" ".gphoto/" ".bash_history" ".nutstore/" ".wget-hsts" ".xsession-errors" ".Xilinx/" ".gconf/" ".nano/" ".dmrc" ".compiz/" "Synchronize/" ".bash_logout" "Music/" "Desktop/" "missfont.log" "Videos/" ".adobe/" "Templates/" ".macromedia/" "Downloads/" ".sudo_as_admin_successful" ".kde/" ".java/" "./" ".texmf-var/" ".ICEauthority" ".xsession-errors.old" ".local/" ".pam_environment" "Documents/")
 )
 

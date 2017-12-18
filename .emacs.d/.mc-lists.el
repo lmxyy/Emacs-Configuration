@@ -5,6 +5,7 @@
       '(
 	cua--shift-control-c-prefix
 	mouse-yank-primary
+	org-self-insert-command
 	))
 
 (setq mc/cmds-to-run-once
