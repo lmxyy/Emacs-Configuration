@@ -4,7 +4,10 @@
 (setq mc/cmds-to-run-for-all
       '(
 	cua--shift-control-c-prefix
+	cua-copy-region
+	electric-verilog-tab
 	mouse-yank-primary
+	org-end-of-line
 	org-self-insert-command
 	))
 

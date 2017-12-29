@@ -633,16 +633,16 @@ Entering cdlatex-mode calls the hook cdlatex-mode-hook.
 
   (interactive "P")
   (setq cdlatex-mode (not (or (and (null arg) cdlatex-mode)
-                             (<= (prefix-numeric-value arg) 0))))
+			      (<= (prefix-numeric-value arg) 0))))
 
-  ; Add or remove the menu, and run the hook
+					; Add or remove the menu, and run the hook
   (if cdlatex-mode
       (progn
 	(easy-menu-add cdlatex-mode-menu)
 	(run-hooks 'cdlatex-mode-hook)
 	(cdlatex-compute-tables))
     (easy-menu-remove cdlatex-mode-menu)))
-    
+
 (or (assoc 'cdlatex-mode minor-mode-alist)
     (setq minor-mode-alist
           (cons '(cdlatex-mode " CDL") minor-mode-alist)))
@@ -717,7 +717,7 @@ Entering cdlatex-mode calls the hook cdlatex-mode-hook.
 
 ;; Alist connection opening with closing delimiters
 (defconst cdlatex-parens-pairs '(("(".")") ("["."]") ("{"."}")
-                               ("|"."|") ("<".">")))
+				 ("|"."|") ("<".">")))
 
 (defun cdlatex-pbb ()
   "Insert a pair of parens, brackets or braces."
@@ -1595,243 +1595,243 @@ zZ
 
 (defconst cdlatex-env-alist-default
   '(
-;;------------------------------------
-( "abstract"
-"\\begin{abstract}
+    ;;------------------------------------
+    ( "abstract"
+      "\\begin{abstract}
 ?
 \\end{abstract}"
-nil
-)
-;;------------------------------------
-( "appendix"
-"\\begin{appendix}
+      nil
+      )
+    ;;------------------------------------
+    ( "appendix"
+      "\\begin{appendix}
 ?
 \\end{appendix}"
-nil
-)
-;;------------------------------------
-( "array"
-"\\begin{array}[tb]{?lcrp{width}*{num}{lcrp{}}|}
+      nil
+      )
+    ;;------------------------------------
+    ( "array"
+      "\\begin{array}[tb]{?lcrp{width}*{num}{lcrp{}}|}
  & & & \\\\
 \\end{array}"
-" & & &"
-)
-;;------------------------------------
-( "center"
-"\\begin{center}
+      " & & &"
+      )
+    ;;------------------------------------
+    ( "center"
+      "\\begin{center}
 ? \\\\
 \\end{center}"
-nil
-)
-;;------------------------------------
-( "deflist"
-"\\begin{deflist}{width-text}
+      nil
+      )
+    ;;------------------------------------
+    ( "deflist"
+      "\\begin{deflist}{width-text}
 \\item ?
 \\end{deflist}"
-"\\item ?"
-)
-;;------------------------------------
-( "description"
-"\\begin{description}
+      "\\item ?"
+      )
+    ;;------------------------------------
+    ( "description"
+      "\\begin{description}
 \\item[?] 
 \\end{description}"
-"\\item[?] "
-)
-;;------------------------------------
-( "displaymath"
-"\\begin{displaymath}
+      "\\item[?] "
+      )
+    ;;------------------------------------
+    ( "displaymath"
+      "\\begin{displaymath}
 ?
 \\end{displaymath}"
-nil
-)
-;;------------------------------------
-( "document"
-"\\begin{document}
+      nil
+      )
+    ;;------------------------------------
+    ( "document"
+      "\\begin{document}
 ?
 \\end{document}"
-nil
-)
-;;------------------------------------
-( "enumerate"
-"\\begin{enumerate}
+      nil
+      )
+    ;;------------------------------------
+    ( "enumerate"
+      "\\begin{enumerate}
 \\itemAUTOLABEL ?
 \\end{enumerate}"
-"\\itemAUTOLABEL ?"
-)
-;;------------------------------------
-( "eqnarray"
-"\\begin{eqnarray}
+      "\\itemAUTOLABEL ?"
+      )
+    ;;------------------------------------
+    ( "eqnarray"
+      "\\begin{eqnarray}
 AUTOLABEL
 ? &  & \\\\
 \\end{eqnarray}"
-"\\\\AUTOLABEL
+      "\\\\AUTOLABEL
 ? &  & "
-)
-;;------------------------------------
-( "eqnarray*"
-"\\begin{eqnarray*}
+      )
+    ;;------------------------------------
+    ( "eqnarray*"
+      "\\begin{eqnarray*}
 ? & & \\\\
 \\end{eqnarray*}"
-"\\\\? & & "
-)
-;;------------------------------------
-( "equation"
-"\\begin{equation}
+      "\\\\? & & "
+      )
+    ;;------------------------------------
+    ( "equation"
+      "\\begin{equation}
 AUTOLABEL
 ?
 \\end{equation}"
-nil
-)
-;;------------------------------------
-( "figure"
-"\\begin{figure}[htbp]
+      nil
+      )
+    ;;------------------------------------
+    ( "figure"
+      "\\begin{figure}[htbp]
 \\centerline{\\includegraphics[]{AUTOFILE}}
 \\caption[]{AUTOLABEL ?}
 \\end{figure}"
-nil
-)
-;;------------------------------------
-( "figure*"
-"\\begin{figure*}[htbp]
+      nil
+      )
+    ;;------------------------------------
+    ( "figure*"
+      "\\begin{figure*}[htbp]
 \\centerline{\includegraphics[]{AUTOFILE}
 \\end{figure*}"
-nil
-)
-;;------------------------------------
-( "flushleft"
-"\\begin{flushleft}
+      nil
+      )
+    ;;------------------------------------
+    ( "flushleft"
+      "\\begin{flushleft}
 ? \\\\
 \\end{flushleft}"
-"\\\\?"
-)
-;;------------------------------------
-( "flushright"
-"\\begin{flushright}
+      "\\\\?"
+      )
+    ;;------------------------------------
+    ( "flushright"
+      "\\begin{flushright}
 ? \\\\
 \\end{flushright}"
-"\\\\?"
-)
-;;------------------------------------
-( "fussypar"
-"\\begin{fussypar}
+      "\\\\?"
+      )
+    ;;------------------------------------
+    ( "fussypar"
+      "\\begin{fussypar}
 ?
 \\end{fussypar}"
-nil
-)
-;;------------------------------------
-( "itemize"
-"\\begin{itemize}
+      nil
+      )
+    ;;------------------------------------
+    ( "itemize"
+      "\\begin{itemize}
 \\item ?
 \\end{itemize}"
-"\\item ?"
-)
-;;------------------------------------
-( "letter"
-"\\begin{letter}
+      "\\item ?"
+      )
+    ;;------------------------------------
+    ( "letter"
+      "\\begin{letter}
 ?
 \\end{letter}"
-nil
-)
-;;------------------------------------
-( "list"
-"\\begin{list}{}{}
+      nil
+      )
+    ;;------------------------------------
+    ( "list"
+      "\\begin{list}{}{}
 \\item ?
 \\end{list}"
-"\\item ?"
-)
-;;------------------------------------
-( "math"
-"\\begin{math}
+      "\\item ?"
+      )
+    ;;------------------------------------
+    ( "math"
+      "\\begin{math}
 ?
 \\end{math}"
-nil
-)
-;;------------------------------------
-( "minipage"
-"\\begin{minipage}[bt]{?.cm}
+      nil
+      )
+    ;;------------------------------------
+    ( "minipage"
+      "\\begin{minipage}[bt]{?.cm}
 
 \\end{minipage}"
-nil
-)
-;;------------------------------------
-( "picture"
-"\\begin{picture}(,)(,)
+      nil
+      )
+    ;;------------------------------------
+    ( "picture"
+      "\\begin{picture}(,)(,)
 ?
 \\end{picture}"
-nil
-)
-;;------------------------------------
-( "quotation"
-"\\begin{quotation}
+      nil
+      )
+    ;;------------------------------------
+    ( "quotation"
+      "\\begin{quotation}
 ?
 \\end{quotation}"
-nil
-)
-;;------------------------------------
-( "quote"
-"\\begin{quote}
+      nil
+      )
+    ;;------------------------------------
+    ( "quote"
+      "\\begin{quote}
 ?
 \\end{quote}"
-nil
-)
-;;------------------------------------
-( "sloppypar"
-"\\begin{sloppypar}
+      nil
+      )
+    ;;------------------------------------
+    ( "sloppypar"
+      "\\begin{sloppypar}
 ?
 \\end{sloppypar}"
-nil
-)
-;;------------------------------------
-( "tabbing"
-"\\begin{tabbing}
+      nil
+      )
+    ;;------------------------------------
+    ( "tabbing"
+      "\\begin{tabbing}
 ? \\=  \\=  \\=  \\= \\\\[0.5ex]
  \\>  \\>  \\>  \\> \\\\
 \\end{tabbing}"
-"\\\\?"
-)
-;;------------------------------------
-( "table"
-"\\begin{table}[htbp]
+      "\\\\?"
+      )
+    ;;------------------------------------
+    ( "table"
+      "\\begin{table}[htbp]
 \\caption[]{AUTOLABEL ?}
 \\vspace{4mm}
 
 \\end{table}"
-nil
-)
-;;------------------------------------
-( "tabular"
-"\\begin{tabular}[tb]{lcrp{width}*{num}{lcrp{}}|}
+      nil
+      )
+    ;;------------------------------------
+    ( "tabular"
+      "\\begin{tabular}[tb]{lcrp{width}*{num}{lcrp{}}|}
 ?
 \\end{tabular}"
-nil
-)
-;;------------------------------------
-( "tabular*"
-"\\begin{tabular*}{width}[tb]{lcrp{width}*{num}{lcrp{}}|}
+      nil
+      )
+    ;;------------------------------------
+    ( "tabular*"
+      "\\begin{tabular*}{width}[tb]{lcrp{width}*{num}{lcrp{}}|}
 ?
 \\end{tabular*}"
-nil
-)
-;;------------------------------------
-( "thebibliography"
-"\\begin{thebibliography}{}
+      nil
+      )
+    ;;------------------------------------
+    ( "thebibliography"
+      "\\begin{thebibliography}{}
 
 \\bibitem[?]{}
 
 \\end{thebibliography}"
-"
+      "
 \\bibitem[?]{}
 ")
-;;------------------------------------
-( "theindex"
-"\\begin{theindex}
+    ;;------------------------------------
+    ( "theindex"
+      "\\begin{theindex}
 ?
 \\end{theindex}"
-nil
-)
-;;------------------------------------
-( "titlepage"
-"\\begin{titlepage}
+      nil
+      )
+    ;;------------------------------------
+    ( "titlepage"
+      "\\begin{titlepage}
 
 \\title{?}
 
@@ -1845,143 +1845,143 @@ nil
 \\date{\\today}
 
 \\end{titlepage}"
-nil
-)
-;;------------------------------------
-( "trivlist"
-"\\begin{trivlist}
+      nil
+      )
+    ;;------------------------------------
+    ( "trivlist"
+      "\\begin{trivlist}
 ?
 \\end{trivlist}"
-nil
-)
-;;------------------------------------
-( "verbatim"
-"\\begin{verbatim}
+      nil
+      )
+    ;;------------------------------------
+    ( "verbatim"
+      "\\begin{verbatim}
 ?
 \\end{verbatim}"
-nil
-)
-;;------------------------------------
-( "verbatim*"
-"\\begin{verbatim*}
+      nil
+      )
+    ;;------------------------------------
+    ( "verbatim*"
+      "\\begin{verbatim*}
 ?
 \\end{verbatim*}"
-nil
-)
-;;------------------------------------
-( "verse"
-"\\begin{verse}
+      nil
+      )
+    ;;------------------------------------
+    ( "verse"
+      "\\begin{verse}
 ? \\\\
 \\end{verse}"
-nil
-)
-;;------------------------------------
-;; AMS-LaTeX
-( "align"
-"\\begin{align}
+      nil
+      )
+    ;;------------------------------------
+    ;; AMS-LaTeX
+    ( "align"
+      "\\begin{align}
 AUTOLABEL
 ?
 \\end{align}"
-"\\\\AUTOLABEL
+      "\\\\AUTOLABEL
 ?")
-;;------------------------------------
-( "align*"
-"\\begin{align*}
+    ;;------------------------------------
+    ( "align*"
+      "\\begin{align*}
 ?
 \\end{align*}"
-"\\\\?")
-;;------------------------------------
-( "alignat"
-"\\begin{alignat}{?}
+      "\\\\?")
+    ;;------------------------------------
+    ( "alignat"
+      "\\begin{alignat}{?}
 AUTOLABEL
  
 \\end{alignat}"
-"\\\\AUTOLABEL
+      "\\\\AUTOLABEL
 ?")
-;;------------------------------------
-( "alignat*"
-"\\begin{alignat*}{?}
+    ;;------------------------------------
+    ( "alignat*"
+      "\\begin{alignat*}{?}
  
 \\end{alignat*}"
-"\\\\?")
-;;------------------------------------
-( "xalignat"
-"\\begin{xalignat}{?}
+      "\\\\?")
+    ;;------------------------------------
+    ( "xalignat"
+      "\\begin{xalignat}{?}
 AUTOLABEL
  
 \\end{xalignat}"
-"\\\\AUTOLABEL
+      "\\\\AUTOLABEL
 ?")
-;;------------------------------------
-( "xalignat*"
-"\\begin{xalignat*}{?}
+    ;;------------------------------------
+    ( "xalignat*"
+      "\\begin{xalignat*}{?}
  
 \\end{xalignat*}"
-"\\\\?")
-;;------------------------------------
-( "xxalignat"
-"\\begin{xxalignat}{?}
+      "\\\\?")
+    ;;------------------------------------
+    ( "xxalignat"
+      "\\begin{xxalignat}{?}
  
 \\end{xxalignat}"
-"\\\\?")
-;;------------------------------------
-("multline"
-"\\begin{multline}
+      "\\\\?")
+    ;;------------------------------------
+    ("multline"
+     "\\begin{multline}
 AUTOLABEL
 ?
 \\end{multline}"
-"\\\\AUTOLABEL
+     "\\\\AUTOLABEL
 ?")
-;;------------------------------------
-("multline*"
-"\\begin{multline*}
+    ;;------------------------------------
+    ("multline*"
+     "\\begin{multline*}
 ?
 \\end{multline*}"
-"?")
-;;------------------------------------
-( "flalign"
-"\\begin{flalign}
+     "?")
+    ;;------------------------------------
+    ( "flalign"
+      "\\begin{flalign}
 AUTOLABEL
 ?
 \\end{flalign}"
-"\\\\AUTOLABEL
+      "\\\\AUTOLABEL
 ?"
-)
-;;------------------------------------
-( "flalign*"
-"\\begin{flalign*}
+      )
+    ;;------------------------------------
+    ( "flalign*"
+      "\\begin{flalign*}
 ?
 \\end{flalign*}"
-"\\\\?"
-)
-;;------------------------------------
-( "gather"
-"\\begin{gather}
+      "\\\\?"
+      )
+    ;;------------------------------------
+    ( "gather"
+      "\\begin{gather}
 AUTOLABEL
 ?
 \\end{gather}"
-"\\\\AUTOLABEL
+      "\\\\AUTOLABEL
 ?")
-;;------------------------------------
-( "gather*"
-"\\begin{gather*}
+    ;;------------------------------------
+    ( "gather*"
+      "\\begin{gather*}
 ?
 \\end{gather*}"
-"\\\\?")
-;;------------------------------------
+      "\\\\?")
+    ;;------------------------------------
 ;;; SOME NON-STANDARD ENVIRONMENTS
-;; figure environment for the epsf macro package
-( "epsfigure"
-"\\begin{figure}[htbp]
+    ;; figure environment for the epsf macro package
+    ( "epsfigure"
+      "\\begin{figure}[htbp]
 \\centerline{\\epsfxsize=\\textwidth \\epsffile{?.eps}}
 \\caption[]{AUTOLABEL}
 \\end{figure}"
-nil
-)
-;;------------------------------------
-;; table environment for AASTeX
-( "deluxetable"
-"\\begin{deluxetable}{?lcrp{width}*{num}{lcrp{}}}
+      nil
+      )
+    ;;------------------------------------
+    ;; table environment for AASTeX
+    ( "deluxetable"
+      "\\begin{deluxetable}{?lcrp{width}*{num}{lcrp{}}}
 \\tablecolumns{}
 \\tablewidth{0pt}
 \\tablecaption{AUTOLABEL }
@@ -1990,26 +1990,26 @@ nil
  &  & \\nl
 \\enddata
 \\end{deluxetable}"
-nil
-)
-;;------------------------------------
-;; figure environments for A&A 
-( "aafigure"
-"\\begin{figure}
+      nil
+      )
+    ;;------------------------------------
+    ;; figure environments for A&A 
+    ( "aafigure"
+      "\\begin{figure}
 \\resizebox{\\hsize}{!}{\\includegraphics{?.eps}}
 \\caption[]{AUTOLABEL}
 \\end{figure}"
-nil
-)
-;;------------------------------------
-( "aafigure*"
-"\\begin{figure*}
+      nil
+      )
+    ;;------------------------------------
+    ( "aafigure*"
+      "\\begin{figure*}
 \\resizebox{12cm}{!}{\\includegraphics{?.eps}}
 \\caption[]{AUTOLABEL}
 \\end{figure*}"
-nil
-)
-))
+      nil
+      )
+    ))
 
 ;;; ---------------------------------------------------------------------------
 ;;;
@@ -2128,27 +2128,27 @@ these variables via `cdlatex-add-to-label-alist'."
 (require 'easymenu)
 
 (easy-menu-define 
- cdlatex-mode-menu cdlatex-mode-map
- "Menu used in CDLaTeX mode"
- '("CDLTX"
-   ["\\begin{...} \\label"   cdlatex-environment t]
-   ["\\item \\label"         cdlatex-item t]
-   "----"
-   ["Insert Math Symbol"     cdlatex-math-symbol t]
-   ["Modify Math Symbol"     cdlatex-math-modify t]
-   "----"
-   ("Customize"
-    ["Browse CDLaTeX group" cdlatex-customize t]
-    "---"
-    ["Build Full Customize Menu" cdlatex-create-customize-menu 
-     (fboundp 'customize-menu-create)])
-   "----"
-   ["Show documentation"      cdlatex-show-commentary t]
-   ["Help with KEYWORD Cmds" cdlatex-command-help t]
-   ["Reset CDLaTeX Mode"       cdlatex-reset-mode t]))
+  cdlatex-mode-menu cdlatex-mode-map
+  "Menu used in CDLaTeX mode"
+  '("CDLTX"
+    ["\\begin{...} \\label"   cdlatex-environment t]
+    ["\\item \\label"         cdlatex-item t]
+    "----"
+    ["Insert Math Symbol"     cdlatex-math-symbol t]
+    ["Modify Math Symbol"     cdlatex-math-modify t]
+    "----"
+    ("Customize"
+     ["Browse CDLaTeX group" cdlatex-customize t]
+     "---"
+     ["Build Full Customize Menu" cdlatex-create-customize-menu 
+      (fboundp 'customize-menu-create)])
+    "----"
+    ["Show documentation"      cdlatex-show-commentary t]
+    ["Help with KEYWORD Cmds" cdlatex-command-help t]
+    ["Reset CDLaTeX Mode"       cdlatex-reset-mode t]))
 
-;(eval-after-load "cus-edit"
-;  '(and (fboundp 'customize-menu-create) (cdlatex-create-customize-menu)))
+					;(eval-after-load "cus-edit"
+					;  '(and (fboundp 'customize-menu-create) (cdlatex-create-customize-menu)))
 
 ;;; Run Hook ------------------------------------------------------------------
 
@@ -2156,7 +2156,7 @@ these variables via `cdlatex-add-to-label-alist'."
 
 ;;; That's it! ----------------------------------------------------------------
 
-; Make sure tabels are compiled
+					; Make sure tabels are compiled
 (cdlatex-compute-tables)
 
 (provide 'cdlatex)
