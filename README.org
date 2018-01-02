@@ -1,1 +1,9 @@
 #+TITLE: Lmxyy's Own Emacs Configuration
+#+AUTHOR: Lmxyy
+* TODO TODO List[%]
+- [ ] verilog hs-minor-mode support
+- [ ] improve auto-complete
+- [ ] org-mode support
+- [ ] tex-mode support
+- [ ] git-elpa
+- [ ] fly-spell mode
