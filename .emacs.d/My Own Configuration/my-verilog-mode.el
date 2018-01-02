@@ -1,3 +1,4 @@
+(add-hook 'verilog-mode-hook 'hs-minor-mode)
 (add-hook 'verilog-mode-hook
 	  (lambda ()
 	    ;; 设置编译信息

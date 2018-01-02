@@ -15,6 +15,7 @@
 (require 'my-org-mode)
 (require 'my-tex-mode)
 (require 'my-verilog-mode)
+(require 'my-hs-minor-mode)
 
 ;; --------------------Custom Sets--------------------
 (custom-set-variables
