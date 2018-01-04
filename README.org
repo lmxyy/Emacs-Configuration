@@ -1,8 +1,8 @@
 #+TITLE: Lmxyy's Own Emacs Configuration
 #+AUTHOR: Lmxyy
 * TODO TODO List[0%]
-- [ ] hs-minor-mode
-  - [ ] verilog hs-minor-mode support
+- [-] hs-minor-mode
+  - [X] verilog hs-minor-mode support
   - [ ] mouse-toggle hide-show mode
   - [ ] add memorization
 - [ ] improve auto-complete
@@ -10,5 +10,7 @@
   - [ ] support the operations between files
 - [ ] org-mode support
 - [ ] tex-mode support
-- [ ] git-elpa
+- [ ] ido-mode support
+- [ ] git-elpa support
 - [ ] fly-spell mode
+- [ ] add file system

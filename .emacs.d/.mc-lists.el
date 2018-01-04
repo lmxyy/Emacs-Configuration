@@ -6,6 +6,7 @@
 	cua--shift-control-c-prefix
 	cua-copy-region
 	electric-verilog-tab
+	electric-verilog-tick
 	mouse-yank-primary
 	org-end-of-line
 	org-self-insert-command

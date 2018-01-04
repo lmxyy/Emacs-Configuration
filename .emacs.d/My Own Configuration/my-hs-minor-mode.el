@@ -20,7 +20,7 @@
 
 ;; Add keyboard shortcut.
 (global-set-key (kbd "C-+") 'toggle-hiding)
-(global-set-key (kbd "C-\\") 'toggle-selective-display)
+(global-set-key (kbd "C-?") 'toggle-selective-display)
 
 ;; Displaying overlay content in echo area or tooltip
 (defun display-code-line-counts (ov)
@@ -110,18 +110,12 @@ Move point to the beginning of the line, and run the normal hook
        (progress-reporter-done spew)))
    (beginning-of-line)
    (run-hooks 'hs-hide-hook)))
-;; 配置每个环境的hide内容
-(defvar hs-special-modes-alist
-  (mapcar 'purecopy
-	  '(
-	    ;; (c-mode "{" "}" "/[*/]" nil nil)
-	    ;; (c++-mode "{" "}" "/[*/]" nil nil)
-	    ;; (bibtex-mode ("@\\S(*\\(\\s(\\)" 1))
-	    ;; (java-mode "{" "}" "/[*/]" nil nil)
-	    ;; (js-mode "{" "}" "/[*/]" nil)
-	    (verilog-mode "begin" "end" "/[*/]" nil nil)
-	    )
-	  )
-  )
+
+(setq hs-special-modes-alist
+      (cons '(verilog-mode 
+	      "\\(\\<begin\\>\\|\\<case\\>\\|\\<module\\>\\)"
+	      "\\(\\<end\\>\\|\\<endcase\\>\\|\\<endmodule\\>\\)"
+                           nil verilog-forward-sexp-function)
+            hs-special-modes-alist))
 
 (provide 'my-hs-minor-mode)

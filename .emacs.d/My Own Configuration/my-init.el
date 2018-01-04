@@ -49,5 +49,8 @@
 (global-font-lock-mode 1)
 ;; Auto Indent
 (global-set-key (kbd "RET") 'newline-and-indent)
+;; disable C-x C-c C-z
 (setq cua-enable-cua-keys nil)
+
 (provide 'my-init)
+
