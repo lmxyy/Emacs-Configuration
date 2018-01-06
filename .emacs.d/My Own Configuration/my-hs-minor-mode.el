@@ -113,8 +113,8 @@ Move point to the beginning of the line, and run the normal hook
 
 (setq hs-special-modes-alist
       (cons '(verilog-mode 
-	      "\\(\\<begin\\>\\|\\<case\\>\\|\\<module\\>\\)"
-	      "\\(\\<end\\>\\|\\<endcase\\>\\|\\<endmodule\\>\\)"
+	      "\\(\\<begin\\>\\|\\<generate\\>\\|\\<case\\>\\|\\<module\\>\\)"
+	      "\\(\\<end\\>\\|\\<endgenerate\\>\\|\\<endcase\\>\\|\\<endmodule\\>\\)"
                            nil verilog-forward-sexp-function)
             hs-special-modes-alist))
 
