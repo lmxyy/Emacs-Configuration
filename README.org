@@ -14,3 +14,4 @@
 - [ ] git-elpa support
 - [ ] fly-spell mode
 - [ ] add file system
+- [ ] ispell
