@@ -1,11 +1,13 @@
+;; mac下不闪
+(setq redisplay-dont-pause nil)
 ;; Keyboard Shortcuts
 (global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "C-`") 'set-mark-command)
 (global-set-key (kbd "<f5>") 'eshell)
 ;; 修改透明度
-(set-frame-parameter (selected-frame) 'alpha (list 78 78))
-(add-to-list 'default-frame-alist (cons 'alpha (list 78 78)))
+(set-frame-parameter (selected-frame) 'alpha (list 85 85))
+(add-to-list 'default-frame-alist (cons 'alpha (list 85 85)))
 ;; set the cursor
 (setq-default cursor-type 'bar)
 ;; comment-dwim
@@ -34,8 +36,8 @@
     (setq default-frame-alist
 	  (append
 	   '( (top . 0)
-	      (left . 0)
-	      (width . 300)
+	      (left . 64)
+	      (width . 145)
 	      (height . 300))
 	   default-frame-alist))
   )
@@ -53,4 +55,3 @@
 (setq cua-enable-cua-keys nil)
 
 (provide 'my-init)
-

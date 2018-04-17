@@ -10,6 +10,13 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/limuyang/Desktop/Course Work 1-Text Classification/Source/"
+ "/Users/limuyang/Desktop/Course Work 1-Text Classification/"
+ "/Users/limuyang/Nustore Files/University/Second Half of Sophomore Year/Data Structure Tutorial Assistant/Test 1/D/data/"
+ "/Users/limuyang/Desktop/Operating System Project 1-Fantasy Ptrace /Task1/"
+ "/Users/limuyang/Nustore Files/University/Second Half of Sophomore Year/Data Structure Tutorial Assistant/Test 1/D/"
+ "/Users/limuyang/Nustore Files/University/Second Half of Sophomore Year/Data Structure Tutorial Assistant/Test 1/C/data/"
+ "/Users/limuyang/"
  "/home/limuyang1999/Desktop/Computer Architecture Task 2/Source/"
  "/home/limuyang1999/Desktop/Computer Architecture Task 2/Code Library/OpenMIPS/Chapter9_3/"
  "/home/limuyang1999/Desktop/Computer Architecture Task 2/"
@@ -20,20 +27,40 @@
 
 ;; ----- ido-work-file-list -----
 (
- "id.v"
- "id_ex.v"
- "ex.v"
- "instr.s"
- "ctrl.v"
- "pc_reg.v"
- "instr.data"
- "inst_rom.v"
- "openmips.v"
- "openmips_min_sopc.v"
+ "Xgboost_Predict.py"
+ "README.org"
+ "train_vector_space.py"
+ "train_prework.py"
+ "burst.cpp"
+ "D.cpp"
+ "gen.cpp"
+ "fantasy.c"
+ "C.cpp"
+ ".emacs"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/limuyang/Desktop/Course Work 1-Text Classification/Source/" (23226 58766 846003 277000) "corpus2bunch.sh" "test_seg.py" "Xgboost_Cross_Validation.py" "train_vector_space.py" "test_corpus2bunch.py" "MultinomialNB_Predict.py" "Xgboost_GridSearch.py" "Xgboost_Predict.sh" "Xgboost_Classify.py" "prework.sh" "vector_space.sh" "segmentation.sh" "train_corpus2bunch.py" "train_seg.py" "test_prework.py" "MultinomialNB_Predict.sh" "test_vector_space.py" ".DS_Store" "train_prework.py" "Xgboost_Predict.py" "../" "./")
+
+ ("/Users/limuyang/Desktop/Course Work 1-Text Classification/" (23224 63380 498546 126000) "Data/" ".git/" "README.org" ".gitignore" "Source/" "Data.zip" ".DS_Store" "../" "./")
+
+ ("/Users/limuyang/Nustore Files/University/Second Half of Sophomore Year/Data Structure Tutorial Assistant/Test 1/D/data/" (23217 4123 329433 602000) "D" "1.in" "gen.cpp~" "1.out" "D.cpp~" "burst.cpp" "gen" "gen.dSYM/" "gen.in" "D.cpp" "D.dSYM/" ".DS_Store" "gen.cpp" "../" "./")
+
+ ("/Users/limuyang/Nustore Files/University/Second Half of Sophomore Year/Data Structure Tutorial Assistant/Test 1/D/D.dSYM/" (23211 38196 152172 962000) "Contents/" "../" "./")
+
+ ("/Users/limuyang/Nustore Files/University/Second Half of Sophomore Year/Data Structure Tutorial Assistant/Test 1/D/" (23215 40800 423969 738000) "burst.cpp~" ".#D.cpp" "D" "data/" "D.out" "D.cpp~" "burst.cpp" "burst" "burst.dSYM/" "D.in" "D.cpp" "D.dSYM/" "problem.md" ".DS_Store" "../" "./")
+
+ ("/Users/limuyang/Desktop/Operating System Project 1-Fantasy Ptrace /Task1/" (23213 60386 862245 736000) "reverse.c" "fantasy.c" "../" "./")
+
+ ("/Users/limuyang/" (23211 46866 289913 63000) ".viminfo" ".bash_history" ".gitconfig" "Downloads/" ".bash_profile" ".swt/" "Documents/" ".nutstore/" ".Trash/" ".emacs~" "Applications/" ".emacs" "Movies/" "Applications (Parallels)/" ".ssh/" "Public/" ".bash_sessions/" "C.out" ".emacs.d/" ".ShadowsocksX-NG/" "Parallels/" ".gdbinit" "Nustore Files/" "Library/" "Desktop/" "Pictures/" ".bash_profile~" ".sogouinput/" ".CFUserTextEncoding" ".lldb/" ".DS_Store" "Music/" "../" "./")
+
+ ("/Users/limuyang/Nustore Files/University/Second Half of Sophomore Year/Data Structure Tutorial Assistant/Test 1/C/data/" (23211 58454 187617 371000) "5.in" "1.in" "4.in" "1.out" "3.out" "2.out" "6.out" "7.out" "5.out" "4.out" "10.in" "9.out" "8.out" "9.in" "8.in" "10.out" "3.in" "7.in" ".DS_Store" "6.in" "2.in" "../" "./")
+
+ ("/Users/limuyang/.emacs.d/" (23210 35644 665520 292000) "elpa/" "site-lisp/" "auto-save-list/" "ido.last~" "My Own Configuration/" "eshell/" ".DS_Store" ".mc-lists.el" "ido.last" "ac-comphist.dat" "../" "./")
+
+ ("/Users/limuyang/.emacs.d/My Own Configuration/" (23210 27105 662366 854000) "my-init.el" "my-cpp-mode.el" "my-verilog-mode.el" "my-ido-mode.el" "my-hs-minor-mode.el" "my-multiple-cursors.el" "hideshowvis.el" "my-java-mode.el" "my-org-mode.el" "my-tex-mode.el" ".DS_Store" "../" "./")
+
  ("/home/limuyang1999/Desktop/Computer Architecture Task 2/Source/" (23117 65323 816974 426000) "openmips_min_sopc_tb" "defines.v" "run.sh" "instr.data" "id.v" "id" "ex_mem.v" "instr.s" "mem_wb.v" "if_id.v" "openmips.v" "../" "ctrl" "openmips" "openmips_min_sopc.v" "openmips_min_sopc_tb.v" "id_ex.v" "mem.v" "get_instr.sh" "ex.v" "pc_reg.v" "predictor.v" "data_ram.v" "regfile.v" "ctrl.v" "inst_rom.v" "./")
 
  ("/home/limuyang1999/Desktop/Computer Architecture Task 2/Code Library/OpenMIPS/Chapter9_1/" (23116 54990 551774 716000) "defines.v" "id.v" "ex_mem.v" "mem_wb.v" "if_id.v" "openmips.v" "../" "openmips_min_sopc.v" "openmips_min_sopc_tb.v" "div.v" "id_ex.v" "mem.v" "hilo_reg.v" "ex.v" "pc_reg.v" "data_ram.v" "regfile.v" "AsmTest/" "ctrl.v" "inst_rom.v" "./" "wave.do" "inst_rom.data")
