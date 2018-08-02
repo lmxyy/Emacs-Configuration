@@ -1,6 +1,14 @@
 (setq org-startup-indented t)
 (add-hook 'org-mode-hook
 	  (lambda ()
+	    ;; 不用主题
+	    (defun disable-all-themes ()
+	      "disable all active themes."
+	      (dolist (i custom-enabled-themes)
+		(disable-theme i)))
+	    
+	    (defadvice load-theme (before disable-themes-first activate)
+	      (disable-all-themes))
 	    ;; 快速插入代码块
 	    (defun org-insert-src-block (src-code-type)
 	      "Insert a `SRC-CODE-TYPE' type source code block in org-mode."

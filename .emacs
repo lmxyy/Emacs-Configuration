@@ -1,9 +1,3 @@
-;; Eshell Path
-(setenv "GCC_HOME" "/usr/local")
-(setenv "PATH" (concat (getenv "PATH") ":" (getenv "GCC_HOME") "/bin"))
-(setenv "GDB_HOME" "/usr/local/Cellar/gdb/8.1")
-(setenv "PATH" (concat (getenv "PATH") ":" (getenv "GDB_HOME") "/bin"))
-
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
@@ -14,34 +8,25 @@
   (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/My Own Configuration"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-color-theme-solarized"))
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/customized"))
+
 (require 'my-cpp-mode)
 (require 'my-c-mode)
-;; (require 'my-ido-mode)
 (require 'my-init)
 (require 'my-java-mode)
-;; (require 'my-multiple-cursors)
 (require 'my-org-mode)
-;; (require 'my-tex-mode)
 (require 'my-verilog-mode)
 (require 'my-hs-minor-mode)
 (require 'my-python-mode)
 (require 'antlr-mode)
-(require 'dash)
-(require 'solarized)
-;; (require 'color-theme)
-;; (load-theme 'solarized t)
-(load-theme 'solarized-light t)
 
 (setq auto-mode-alist
       ;; 将文件模式和文件后缀关联起来
       (append '(("\\.py\\'" . python-mode)
                 ("\\.s?html?\\'" . html-helper-mode)
                 ("\\.g4\\'" . antlr-v4-mode)
+		("\\.mx\\'" . c++-mode)
                 ("\\.asp\\'" . html-helper-mode)
                 ("\\.phtml\\'" . html-helper-mode)
                 ("\\.css\\'" . css-mode))
@@ -56,7 +41,7 @@
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(custom-safe-themes
-   '("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))
+   '("a4a1dbb04b1e08186a39375df6fa561460239ec3c7821f88ada573b66a80ede7" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
  '(package-selected-packages
