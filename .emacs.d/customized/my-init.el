@@ -53,5 +53,7 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 ;; disable C-x C-c C-z
 (setq cua-enable-cua-keys nil)
+(setq make-backup-files nil)		;关闭自动备份
+
 
 (provide 'my-init)
